@@ -1,0 +1,18 @@
+.header {
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    color: green;
+  }
+
+  .menu {
+    list-style: none;
+    display: flex;
+    li {
+      padding-right: 15px;
+    }
+  }
+
+}
