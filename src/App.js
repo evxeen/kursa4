@@ -1,11 +1,22 @@
 import {Header} from "./components/Header/Header";
-// import {Catalog} from "./components/Catalog/Catalog";
+import {Route, Routes} from "react-router-dom";
+import {Catalog} from "./pages/Catalog";
+import {AboutUs} from "./pages/AboutUs";
+import {Delivery} from "./pages/Delivery";
+import {Cart} from "./pages/Cart";
+import {ErrorPage} from "./pages/ErrorPage";
 
 function App() {
   return (
     <div className='main'>
       <Header/>
-       {/*<Catalog />*/}
+       <Routes>
+          <Route path='/' element={<Catalog />}/>
+          <Route path='/about' element={<AboutUs />}/>
+          <Route path='/delivery' element={<Delivery />}/>
+          <Route path='/cart' element={<Cart />}/>
+          <Route path='/*' element={<ErrorPage />}/>
+       </Routes>
     </div>
   );
 }

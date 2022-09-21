@@ -21,19 +21,21 @@
     justify-content: space-around;
     transition: 0.3s ease all;
 
-    li {
+    .link {
       display: flex;
+      text-decoration: none;
+      color: black;
       align-items: center;
       transition: 0.3s ease all;
     }
 
-    li.active {
+    .link.active {
       padding-bottom: 10px;
       color: #e7a95b;
       border-bottom: 2px solid #e7a95b;
     }
 
-    li:hover {
+    .link:hover {
       cursor: pointer;
       padding-bottom: 10px;
       border-bottom: 2px solid #e7a95b;
@@ -54,6 +56,12 @@
       color: #e7a95b;
       border-left: 2px solid #e7a95b;
       transition: 0.3s ease all;
+      padding-left: 10px;
+    }
+
+    .activeCart {
+      color: #e7a95b;
+      border-left: 2px solid #e7a95b;
       padding-left: 10px;
     }
   }
