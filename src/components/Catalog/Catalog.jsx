@@ -1,3 +1,4 @@
+import axios from "../../axios";
 import s from './Catalog.module.scss';
 import {Card} from "../Card/Card";
 import {useEffect, useState} from "react";
@@ -6,7 +7,7 @@ export const Catalog = () => {
    const [data, setData] = useState([]);
 
    useEffect(() => {
-      fetch('https://kursa4-backend.herokuapp.com/api/scrap').then(res => res.json()).then(data => setData(data))
+      axios.get('/scrap').then(res => res.json()).then(data => setData(data))
    }, []);
    return (
        <div className={s.catalog}>
