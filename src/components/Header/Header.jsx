@@ -1,6 +1,7 @@
-import s from './Header.module.scss';
-import {useState} from "react";
 import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {selectMenuElement, selectCart} from "../../store/slices/menuSlice";
+import s from './Header.module.scss';
 
 export const Header = () => {
    const menuList = [
@@ -9,18 +10,9 @@ export const Header = () => {
       {name: 'Информация о доставке и оплате', path: '/delivery'}
    ];
 
-   const [activeElement, setActiveElement] = useState(menuList[0]);
-   const [activeCart, setActiveCart] = useState(false);
-
-   const selectActiveElement = (element) => {
-      setActiveElement(element);
-      setActiveCart(false);
-   };
-
-   const selectCart = () => {
-      setActiveCart(true);
-      setActiveElement('');
-   };
+   const activeMenuElement = useSelector(state => state.reducer.activeMenuElement);
+   const activeCart = useSelector(state => state.reducer.activeCart);
+   const dispatch = useDispatch();
 
    return (
        <section className={s.header}>
@@ -30,15 +22,15 @@ export const Header = () => {
           <ul className={s.menu}>
              {menuList.map((el) => (
                  <Link to={el.path} key={el.name}
-                       className={`${s.link} ${el.name === activeElement.name ? s.active : ''}`}
-                       onClick={() => selectActiveElement(el)}
+                       className={`${s.link} ${el.name === activeMenuElement.name ? s.active : ''}`}
+                       onClick={() => dispatch(selectMenuElement(el))}
                  >
                     {el.name}
                  </Link>
              ))}
           </ul>
           <div className={s.card}>
-             <Link to="/cart" onClick={selectCart}>
+             <Link to="/cart" onClick={() => dispatch(selectCart(true))}>
                 <img className={activeCart ? s.activeCart : ''}
                      src="/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919.svg"
                      alt="cart"
