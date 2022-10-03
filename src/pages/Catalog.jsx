@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "../components/Card/Card";
 
 export const Catalog = () => {
   const filterList = [
@@ -20,42 +21,7 @@ export const Catalog = () => {
         </ul>
       </div>
       <div className="catalog_products">
-        <div className="catalog_card">
-          <img src="/logo.png" alt="product" />
-          <span className="card_name">Наименование</span>
-          <span className="card_price">Прайс</span>
-          <button>В корзину</button>
-        </div>
-        <div className="catalog_card">
-          <img src="/logo.png" alt="product" />
-          <span className="card_name">Наименование</span>
-          <span className="card_price">Прайс</span>
-          <button>В корзину</button>
-        </div>
-        <div className="catalog_card">
-          <img src="/logo.png" alt="product" />
-          <span className="card_name">Наименование</span>
-          <span className="card_price">Прайс</span>
-          <button>В корзину</button>
-        </div>
-        <div className="catalog_card">
-          <img src="/logo.png" alt="product" />
-          <span className="card_name">Наименование</span>
-          <span className="card_price">Прайс</span>
-          <button>В корзину</button>
-        </div>
-        <div className="catalog_card">
-          <img src="/logo.png" alt="product" />
-          <span className="card_name">Наименование</span>
-          <span className="card_price">Прайс</span>
-          <button>В корзину</button>
-        </div>
-        <div className="catalog_card">
-          <img src="/logo.png" alt="product" />
-          <span className="card_name">Наименование</span>
-          <span className="card_price">Прайс</span>
-          <button>В корзину</button>
-        </div>
+        <Card />
       </div>
     </div>
   );
