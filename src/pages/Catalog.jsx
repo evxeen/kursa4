@@ -15,11 +15,48 @@ export const Catalog = () => {
       <div className="catalog_filters">
         <ul>
           {filterList.map((el) => (
-            <li>{el}</li>
+            <li key={el}>{el}</li>
           ))}
         </ul>
       </div>
-      <div className="catalog_products">qweqwe</div>
+      <div className="catalog_products">
+        <div className="catalog_card">
+          <img src="/logo.png" alt="product" />
+          <span className="card_name">Наименование</span>
+          <span className="card_price">Прайс</span>
+          <button>В корзину</button>
+        </div>
+        <div className="catalog_card">
+          <img src="/logo.png" alt="product" />
+          <span className="card_name">Наименование</span>
+          <span className="card_price">Прайс</span>
+          <button>В корзину</button>
+        </div>
+        <div className="catalog_card">
+          <img src="/logo.png" alt="product" />
+          <span className="card_name">Наименование</span>
+          <span className="card_price">Прайс</span>
+          <button>В корзину</button>
+        </div>
+        <div className="catalog_card">
+          <img src="/logo.png" alt="product" />
+          <span className="card_name">Наименование</span>
+          <span className="card_price">Прайс</span>
+          <button>В корзину</button>
+        </div>
+        <div className="catalog_card">
+          <img src="/logo.png" alt="product" />
+          <span className="card_name">Наименование</span>
+          <span className="card_price">Прайс</span>
+          <button>В корзину</button>
+        </div>
+        <div className="catalog_card">
+          <img src="/logo.png" alt="product" />
+          <span className="card_name">Наименование</span>
+          <span className="card_price">Прайс</span>
+          <button>В корзину</button>
+        </div>
+      </div>
     </div>
   );
 };
