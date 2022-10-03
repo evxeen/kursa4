@@ -4,7 +4,6 @@
 
 .catalog_wrap {
   display: flex;
-  height: 100%;
 }
 
 .catalog_filters {
@@ -37,12 +36,12 @@
 }
 
 .catalog_products {
+  height: 100vh;
+  overflow-y: scroll;
   padding: 40px;
   width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-
 }
 

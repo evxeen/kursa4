@@ -22,6 +22,16 @@ export const Catalog = () => {
       </div>
       <div className="catalog_products">
         <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     </div>
   );
