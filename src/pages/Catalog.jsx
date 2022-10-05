@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card } from "../components/Card/Card";
+import axios from "../axios";
 
 export const Catalog = () => {
   const filterList = [
@@ -11,6 +12,10 @@ export const Catalog = () => {
     "Клеевые материалы",
   ];
 
+  useEffect(() => {
+    axios.get("/scrap").then((res) => console.log(res.data));
+  }, []);
+
   return (
     <div className="catalog_wrap">
       <div className="catalog_filters">
@@ -21,16 +26,6 @@ export const Catalog = () => {
         </ul>
       </div>
       <div className="catalog_products">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
         <Card />
       </div>
     </div>
