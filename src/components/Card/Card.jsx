@@ -1,14 +1,13 @@
-import s from './Card.module.scss';
+import s from "./Card.module.scss";
+import React from "react";
 
-export const Card = ({data}) => {
-   const {src, title, price} = data;
-
-   return (
-       <div className={s.card}>
-          <img src={src} alt="image"/>
-          <span>{title}</span>
-          <span>{price}</span>
-       </div>
-   );
-}
-
+export const Card = () => {
+  return (
+    <div className={s.card}>
+      <img src="/logo.png" alt="product" />
+      <span className={s.name}>Наименование</span>
+      <span className="card_price">Прайс</span>
+      <button>В корзину</button>
+    </div>
+  );
+};

@@ -1,0 +1,47 @@
+.main {
+  height: 90vh;
+}
+
+.catalog_wrap {
+  display: flex;
+}
+
+.catalog_filters {
+  background-color: #f3f3f3;
+  width: 20%;
+  font-size: 18px;
+
+  ul {
+    margin-top: 50px;
+    padding: 0;
+  }
+
+  li {
+    padding: 14px;
+    list-style: none;
+    transition: 0.3s ease all;
+
+    .link.active {
+      padding-left: 20px;
+      color: #e7a95b;
+    }
+
+    &:hover {
+      cursor: pointer;
+      padding-left: 25px;
+      background: #e7a95b;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+.catalog_products {
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 40px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
