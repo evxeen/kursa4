@@ -10,10 +10,9 @@ export const Header = () => {
     { name: "Информация о доставке и оплате", path: "/delivery" },
   ];
 
-  const activeMenuElement = useSelector(
-    (state) => state.reducer.activeMenuElement
+  const { activeMenuElement, activeCart } = useSelector(
+    (state) => state.menuSlice
   );
-  const activeCart = useSelector((state) => state.reducer.activeCart);
   const dispatch = useDispatch();
 
   return (
