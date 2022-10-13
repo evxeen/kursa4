@@ -3,9 +3,11 @@ import { Card } from "../components/Card/Card";
 import axios from "../axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addProducts } from "../store/slices/productsSlice";
+import { selectFilterElement } from "../store/slices/filterSlice";
 
 export const Catalog = () => {
   const { products } = useSelector((state) => state.productsSlice);
+  const { activeFilterElement } = useSelector((state) => state.filterSlice);
   const dispatch = useDispatch();
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -17,6 +19,8 @@ export const Catalog = () => {
     { name: "Декор" },
     { name: "Клеевые материалы" },
   ];
+
+  console.log(activeFilterElement);
 
   useEffect(() => {
     axios.get("/scrap").then((res) => dispatch(addProducts(res.data)));
@@ -33,6 +37,7 @@ export const Catalog = () => {
     }
     const filtered = products.filter((prod) => prod.category === filteredBy);
     setFilteredProducts(filtered);
+    dispatch(selectFilterElement(filteredBy));
   };
 
   return (
@@ -40,7 +45,11 @@ export const Catalog = () => {
       <div className="catalog_filters">
         <ul>
           {filterList.map((el, index) => (
-            <li key={el.name} onClick={() => filter(index)}>
+            <li
+              className={`${index === activeFilterElement ? "active" : ""}`}
+              key={el.name}
+              onClick={() => filter(index)}
+            >
               {el.name}
             </li>
           ))}
