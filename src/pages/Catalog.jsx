@@ -10,12 +10,12 @@ export const Catalog = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   const filterList = [
-    { name: "Все товары", filterBy: 0 },
-    { name: "Кольцевые механизмы", filterBy: 1 },
-    { name: "Бумага", filterBy: 2 },
-    { name: "Инструменты и комплектующие", filterBy: 3 },
-    { name: "Декор", filterBy: 4 },
-    { name: "Клеевые материалы", filterBy: 5 },
+    { name: "Все товары" },
+    { name: "Кольцевые механизмы" },
+    { name: "Бумага" },
+    { name: "Инструменты и комплектующие" },
+    { name: "Декор" },
+    { name: "Клеевые материалы" },
   ];
 
   useEffect(() => {
@@ -39,8 +39,8 @@ export const Catalog = () => {
     <div className="catalog_wrap">
       <div className="catalog_filters">
         <ul>
-          {filterList.map((el) => (
-            <li key={el.filterBy} onClick={() => filter(el.filterBy)}>
+          {filterList.map((el, index) => (
+            <li key={el.name} onClick={() => filter(index)}>
               {el.name}
             </li>
           ))}
