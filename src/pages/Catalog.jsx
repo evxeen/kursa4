@@ -20,8 +20,6 @@ export const Catalog = () => {
     { name: "Клеевые материалы" },
   ];
 
-  console.log(activeFilterElement);
-
   useEffect(() => {
     axios.get("/scrap").then((res) => dispatch(addProducts(res.data)));
   }, []);
