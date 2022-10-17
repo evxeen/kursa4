@@ -4,6 +4,7 @@ import { selectMenuElement, selectCart } from "../../store/slices/menuSlice";
 import s from "./Header.module.scss";
 
 export const Header = () => {
+  const dispatch = useDispatch();
   const menuList = [
     { name: "Каталог", path: "/" },
     { name: "О компании", path: "/about" },
@@ -13,7 +14,6 @@ export const Header = () => {
   const { activeMenuElement, activeCart } = useSelector(
     (state) => state.menuSlice
   );
-  const dispatch = useDispatch();
 
   return (
     <section className={s.header}>

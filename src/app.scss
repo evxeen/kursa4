@@ -21,9 +21,9 @@
     list-style: none;
     transition: 0.3s ease all;
 
-    .link.active {
+    &.active {
       padding-left: 20px;
-      color: #e7a95b;
+      background: #e7a95b;
     }
 
     &:hover {
