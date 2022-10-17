@@ -4,11 +4,12 @@ import { useSelector } from "react-redux";
 
 export const Cart = () => {
   const { cartList } = useSelector((state) => state.cartSlice);
+
   return (
     <div className="cart_wrapper">
-      {cartList
+      {cartList.length !== 0
         ? cartList.map((el) => <CartBlock key={el.id} {...el} />)
-        : "none"}
+        : "Вы пока ничего не добавили в корзину."}
     </div>
   );
 };
