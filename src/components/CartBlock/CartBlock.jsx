@@ -1,15 +1,15 @@
 import s from "./CartBlock.module.scss";
 import React from "react";
 
-export const CartBlock = () => {
+export const CartBlock = ({ src, title, price, id }) => {
   return (
     <div className={s.block}>
       <div>
-        <img src="/logo.png" />
-        <span>name</span>
+        <img src={src} alt="image" />
+        <span>{title}</span>
       </div>
       <span>колличесвто</span>
-      <span>общаяя стоимость</span>
+      <span>{price}</span>
       <button>удалить</button>
     </div>
   );

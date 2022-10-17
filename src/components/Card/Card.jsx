@@ -1,13 +1,30 @@
 import s from "./Card.module.scss";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../store/slices/cartSlice";
 
-export const Card = ({ title, price }) => {
+export const Card = ({ src, title, price, id }) => {
+  const dispatch = useDispatch();
+
+  const addToCart = (src, title, price, id) => {
+    const product = {
+      src,
+      title,
+      price,
+      id,
+    };
+
+    dispatch(addProduct(product));
+  };
+
   return (
     <div className={s.card}>
-      <img src="/logo.png" alt="product" />
+      <img src={src} alt="product" />
       <span className={s.name}>{title}</span>
       <span className="card_price">{price} р.</span>
-      <button>В корзину</button>
+      <button onClick={() => addToCart(src, title, price, id)}>
+        В корзину
+      </button>
     </div>
   );
 };
