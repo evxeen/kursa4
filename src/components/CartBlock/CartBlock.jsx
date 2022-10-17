@@ -1,16 +1,24 @@
 import s from "./CartBlock.module.scss";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { removeProduct } from "../../store/slices/cartSlice";
 
-export const CartBlock = ({ src, title, price, id }) => {
+export const CartBlock = ({ src, title, price, id, count }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className={s.block}>
-      <div>
+      <div className={s.mainInfo}>
         <img src={src} alt="image" />
         <span>{title}</span>
       </div>
-      <span>колличесвто</span>
+      <div className={s.counter}>
+        <button>-</button>
+        <span>{count}</span>
+        <button>+</button>
+      </div>
       <span>{price}</span>
-      <button>удалить</button>
+      <button onClick={() => dispatch(removeProduct(id))}>удалить</button>
     </div>
   );
 };

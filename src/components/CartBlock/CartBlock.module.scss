@@ -7,7 +7,7 @@
   align-items: center;
   padding: 0 20px 0 20px;
 
-  div {
+  .mainInfo {
     display: flex;
     width: 30%;
     span {
@@ -17,6 +17,27 @@
       align-items: center;
     }
   }
+
+  .counter {
+    span {
+      margin: 0 5px 0 5px;
+    }
+
+    button {
+      width: 20px;
+      height: 20px;
+      border: none;
+      background: black;
+      color: white;
+
+      &:hover {
+        color: black;
+        background: white;
+        cursor: pointer;
+      }
+    }
+  }
+
 
   img {
     width: 100px;

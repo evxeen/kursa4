@@ -12,6 +12,7 @@ export const Card = ({ src, title, price, id }) => {
       title,
       price,
       id,
+      count: 1,
     };
 
     dispatch(addProduct(product));
