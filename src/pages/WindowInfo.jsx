@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../store/slices/cartSlice";
 
@@ -42,6 +42,7 @@ export const WindowInfo = () => {
 
   return (
     <div className="info_wrapper">
+      <Link to="/">Назад</Link>
       <div className="info_image">
         <img src={product.src} alt="" />
       </div>

@@ -54,6 +54,24 @@
   margin: 50px 100px 50px 100px;
   display: flex;
 
+  a {
+    text-decoration: none;
+    color: black;
+    width: 150px;
+    height: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background: #7a7676;
+    transition: 0.3s ease all;
+
+    &:hover {
+      background: #e7a95b;
+      transition: 0.3s ease all;
+    }
+  }
+
   .info_image {
     img {
       width: 500px;
