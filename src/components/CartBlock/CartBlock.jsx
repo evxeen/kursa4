@@ -2,6 +2,7 @@ import s from "./CartBlock.module.scss";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { removeProduct } from "../../store/slices/cartSlice";
+import { plusOne, minusOne } from "../../store/slices/cartSlice";
 
 export const CartBlock = ({ src, title, price, id, count }) => {
   const dispatch = useDispatch();
@@ -13,9 +14,9 @@ export const CartBlock = ({ src, title, price, id, count }) => {
         <span>{title}</span>
       </div>
       <div className={s.counter}>
-        <button>-</button>
+        <button onClick={() => dispatch(minusOne(id))}>-</button>
         <span>{count}</span>
-        <button>+</button>
+        <button onClick={() => dispatch(plusOne(id))}>+</button>
       </div>
       <span>{price}</span>
       <button onClick={() => dispatch(removeProduct(id))}>удалить</button>

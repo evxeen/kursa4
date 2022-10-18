@@ -19,6 +19,8 @@ export const Card = ({ src, title, price, id }) => {
     const checkingForAvailability = cartList.find(
       (product) => product.id === id
     );
+
+    console.log(checkingForAvailability);
     if (checkingForAvailability) {
       alert("Вы уже добавили этот товар в корзину");
       return;
