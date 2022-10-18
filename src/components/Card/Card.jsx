@@ -21,7 +21,6 @@ export const Card = ({ src, title, price, id }) => {
       (product) => product.id === id
     );
 
-    console.log(checkingForAvailability);
     if (checkingForAvailability) {
       alert("Вы уже добавили этот товар в корзину");
       return;
@@ -32,7 +31,7 @@ export const Card = ({ src, title, price, id }) => {
 
   return (
     <div className={s.card}>
-      <Link to="/info">
+      <Link to={`/info/${id}`}>
         <img src={src} alt="product" />
       </Link>
       <span className={s.name}>{title}</span>

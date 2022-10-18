@@ -18,7 +18,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/delivery" element={<Delivery />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/info" element={<WindowInfo />} />
+        <Route path="/info/:id" element={<WindowInfo />} />
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </div>

@@ -62,15 +62,16 @@
 
   .info_data {
     font-size: 20px;
+    margin-left: 50px;
 
     .info_data-desc {
-      font-size: 14px;
+      font-size: 16px;
     }
 
     button {
+      width: 300px;
       margin-top: 10px;
       padding: 10px;
-      width: 100%;
       font-size: 16px;
       border: none;
       background: #7a7676;
