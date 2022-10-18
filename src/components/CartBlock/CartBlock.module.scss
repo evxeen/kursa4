@@ -1,0 +1,45 @@
+.block {
+  border: 1px solid black;
+  background-color: #f3f3f3;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+
+  .mainInfo {
+    display: flex;
+    width: 30%;
+    span {
+      margin-left: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .counter {
+    span {
+      margin: 0 5px 0 5px;
+    }
+
+    button {
+      width: 20px;
+      height: 20px;
+      border: none;
+      background: black;
+      color: white;
+
+      &:hover {
+        color: black;
+        background: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+
+  img {
+    width: 100px;
+  }
+}
