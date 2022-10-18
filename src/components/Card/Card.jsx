@@ -2,6 +2,7 @@ import s from "./Card.module.scss";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../../store/slices/cartSlice";
+import { Link } from "react-router-dom";
 
 export const Card = ({ src, title, price, id }) => {
   const { cartList } = useSelector((state) => state.cartSlice);
@@ -20,7 +21,6 @@ export const Card = ({ src, title, price, id }) => {
       (product) => product.id === id
     );
 
-    console.log(checkingForAvailability);
     if (checkingForAvailability) {
       alert("Вы уже добавили этот товар в корзину");
       return;
@@ -31,7 +31,9 @@ export const Card = ({ src, title, price, id }) => {
 
   return (
     <div className={s.card}>
-      <img src={src} alt="product" />
+      <Link to={`/info/${id}`}>
+        <img src={src} alt="product" />
+      </Link>
       <span className={s.name}>{title}</span>
       <span className="card_price">{price} р.</span>
       <button onClick={() => addToCart(src, title, price, id)}>
