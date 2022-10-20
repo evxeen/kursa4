@@ -1,39 +1,17 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { selectMenuElement, selectCart } from "../../store/slices/menuSlice";
+import { selectCart } from "../../store/slices/menuSlice";
 import s from "./Header.module.scss";
 
 export const Header = () => {
   const dispatch = useDispatch();
-  const menuList = [
-    { name: "Каталог", path: "/" },
-    { name: "О компании", path: "/about" },
-    { name: "Информация о доставке и оплате", path: "/delivery" },
-  ];
-
-  const { activeMenuElement, activeCart } = useSelector(
-    (state) => state.menuSlice
-  );
+  const { activeCart } = useSelector((state) => state.menuSlice);
 
   return (
     <section className={s.header}>
       <div className={s.logo}>
         <img src="/logo.png" alt="logo" />
       </div>
-      <ul className={s.menu}>
-        {menuList.map((el) => (
-          <Link
-            to={el.path}
-            key={el.name}
-            className={`${s.link} ${
-              el.name === activeMenuElement.name ? s.active : ""
-            }`}
-            onClick={() => dispatch(selectMenuElement(el))}
-          >
-            {el.name}
-          </Link>
-        ))}
-      </ul>
       <div className={s.card}>
         <Link to="/cart" onClick={() => dispatch(selectCart(true))}>
           <img
