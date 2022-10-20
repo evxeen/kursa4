@@ -31,6 +31,7 @@ export const Catalog = () => {
   const filter = (filteredBy) => {
     if (filteredBy === 0) {
       setFilteredProducts(products);
+      dispatch(selectFilterElement(0));
       return;
     }
     const filtered = products.filter((prod) => prod.category === filteredBy);
